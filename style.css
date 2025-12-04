@@ -1,0 +1,361 @@
+/* --------------------------
+   🌈 GENERAL LAYOUT & BODY
+--------------------------- */
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: #fff;
+  overflow: hidden;
+}
+
+/* --------------------------
+   📦 MAIN CONTAINER
+---------------------------*/
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 1s ease-in;
+}
+
+/* --------------------------
+   🌟 TITLE
+--------------------------- */
+h1.glow {
+  color: #fff;
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  animation: glowPulse 2s infinite alternate;
+}
+
+/* --------------------------
+   💬 POPUPS (for level, ready, and result)
+--------------------------- */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+  transition: opacity 0.4s;
+}
+
+.hidden {
+  display: none;
+}
+
+/* --------------------------
+   ⏳ READY POPUP (Circular)
+--------------------------- */
+.popup-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.popup-circle svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  transform: rotate(-90deg);
+}
+
+.popup-circle svg circle {
+  fill: none;
+  stroke: #00ffcc;
+  stroke-width: 10;
+  stroke-dasharray: 502;
+  stroke-dashoffset: 0;
+  animation: countdownStroke 3s linear forwards;
+}
+
+.countdown-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4em;
+  font-weight: bold;
+  color: #00ffcc;
+  text-shadow: 0 0 20px #00ffcc;
+}
+
+.popup-text {
+  margin-top: 20px;
+  font-size: 1.4em;
+  color: #fff;
+  animation: pulse 1s infinite;
+}
+
+/* --------------------------
+   🏁 RESULT & LEVEL POPUPS
+--------------------------- */
+.result-box {
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid #00ffcc;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 25px #00ffcc;
+  animation: popIn 0.8s ease-out;
+}
+
+.result-box h2 {
+  color: #00ffcc;
+  margin-bottom: 15px;
+}
+
+.result-box p {
+  font-size: 1.3em;
+  margin: 10px 0;
+}
+
+.result-box input {
+  padding: 10px;
+  border: none;
+  width: 80px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.result-box button {
+  margin-top: 15px;
+  background: linear-gradient(90deg, #00c853, #b2ff59);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  color: #000;
+}
+
+.result-box button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #64dd17, #ccff90);
+}
+
+/* --------------------------
+   ⌛ PROGRESS BAR
+--------------------------- */
+#progress-bar-container {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  height: 10px;
+  width: 100%;
+  margin: 10px auto 25px auto;
+  overflow: hidden;
+}
+
+#progress-bar {
+  height: 10px;
+  width: 100%;
+  background: linear-gradient(90deg, #00ff99, #00ccff);
+  transition: width 1s linear;
+}
+
+/* --------------------------
+   🧾 TEXT DISPLAY BOX
+--------------------------- */
+.text-to-type {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 1.1em;
+  height: 150px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+/* --------------------------
+   ⌨️ TYPING INPUT
+--------------------------- */
+#text-input {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #00ccff;
+  border-radius: 6px;
+  font-size: 1.1em;
+  resize: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  transition: 0.3s;
+}
+
+#text-input:focus {
+  border-color: #00ffcc;
+  box-shadow: 0 0 10px #00ffcc;
+  outline: none;
+}
+
+/* --------------------------
+   🔘 BUTTONS (Start, Reset, etc.)
+--------------------------- */
+button {
+  padding: 10px 25px;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+#start-btn {
+  background: linear-gradient(90deg, #00c853, #b2ff59);
+  color: #000;
+}
+
+#start-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #64dd17, #ccff90);
+}
+
+#reset-btn {
+  background: linear-gradient(90deg, #ff1744, #ff5252);
+  color: white;
+}
+
+#reset-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ff5252, #ff8a80);
+}
+
+/* --------------------------
+   📊 RESULTS PANEL
+--------------------------- */
+.results p {
+  font-size: 1.1em;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* --------------------------
+   ✅ CHARACTER COLORS
+--------------------------- */
+.correct {
+  color: #00ff99;
+}
+
+.incorrect {
+  color: #ff1744;
+  text-decoration: underline;
+}
+
+/* --------------------------
+   ✨ ANIMATIONS
+--------------------------- */
+@keyframes countdownStroke {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 502;
+  }
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 10px #00e5ff;
+  }
+  to {
+    text-shadow: 0 0 30px #00ffcc;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* --------------------------
+   🟥 BUTTON COLORS IN RESULT POPUP
+--------------------------- */
+.result-box .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.result-box .buttons button {
+  flex: 1;
+  min-width: 100px;
+}
+
+.result-box button.next {
+  background: linear-gradient(90deg, #00c853, #b2ff59);
+  color: #000;
+}
+
+.result-box button.choose {
+  background: linear-gradient(90deg, #2979ff, #82b1ff);
+  color: white;
+}
+
+.result-box button.quit {
+  background: linear-gradient(90deg, #ff1744, #ff5252);
+  color: white;
+}
+
+.result-box button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}

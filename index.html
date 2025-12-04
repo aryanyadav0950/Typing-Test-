@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typing Speed Levels</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="glow">Typing Speed Challenge</h1>
+
+    <!-- Choose Level Popup -->
+    <div id="level-popup" class="popup">
+      <div class="result-box">
+        <h2>🏁 Choose Your Level</h2>
+        <p>(1 = Easy ➜ 10 = Hard)</p>
+        <input type="number" id="level-input" min="1" max="10" value="1">
+        <div style="margin-top:12px; display:flex; gap:8px; justify-content:center;">
+          <button onclick="confirmLevel()">Start Level</button>
+          <button onclick="closeLevelPopup()">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Get Ready Popup -->
+    <div id="ready-popup" class="popup hidden">
+      <div class="popup-circle">
+        <div class="countdown-number" id="ready-timer">3</div>
+        <svg>
+          <circle cx="50%" cy="50%" r="80"></circle>
+        </svg>
+      </div>
+      <p class="popup-text">Get Ready...</p>
+    </div>
+
+    <!-- Result Popup -->
+    <div id="result-popup" class="popup hidden">
+      <div class="result-box">
+        <h2>✅ Level <span id="level-show">1</span> Complete!</h2>
+        <p>⚡ Speed: <span id="final-wpm">0</span> WPM</p>
+        <p>🎯 Accuracy: <span id="final-accuracy">0</span>%</p>
+        <div class="buttons">
+          <button class="next" onclick="nextLevel()">Next Level</button>
+          <button class="choose" onclick="openLevelPopup()">Choose Level</button>
+          <button class="quit" onclick="quitGame()">Quit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div id="progress-bar-container">
+      <div id="progress-bar"></div>
+    </div>
+
+    <!-- Text Display -->
+    <div id="text-display" class="text-to-type">
+      Choose a level to start!
+    </div>
+
+    <!-- Typing Input -->
+    <textarea
+      id="text-input"
+      placeholder="Start typing here..."
+      rows="5"
+      disabled
+    ></textarea>
+
+    <!-- Buttons -->
+    <div class="buttons">
+      <button id="start-btn" onclick="startTest()">Start Test</button>
+      <button id="reset-btn" onclick="resetTest()" disabled>Reset</button>
+      <button id="open-level-btn" onclick="openLevelPopup()">Choose Level</button>
+    </div>
+
+    <!-- Stats -->
+    <div class="results">
+      <p>⏳ Time Left: <span id="timer">0</span>s</p>
+      <p>⚡ WPM: <span id="wpm">0</span></p>
+      <p>🎯 Accuracy: <span id="accuracy">0</span>%</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
