@@ -10,7 +10,7 @@ This project measures typing speed (WPM), accuracy, elapsed time, and shows erro
 - Starts timer on first key press                     
 - Calculates **WPM (words per minute)** using standard formula (1 word = 5 characters)
 - Calculates **Accuracy (%)** = (correct characters / total typed) × 100
-- Shows **Errors** (mismatched characters)       
+- Shows **Errors** (mismatched characters)         
 - Reset button to try again   
 - Responsive layout for desktop and mobile
 
