@@ -16,7 +16,7 @@ This project measures typing speed (WPM), accuracy, elapsed time, and shows erro
 
 ---
 
-## 📁 Files in this repo
+## 📁 Files in this repo 
 - `index.html` — Main webpage (contains markup)
 - `style.css` — Stylesheet for layout & visuals
 - `script.js` — JavaScript logic for timer, scoring, and validation
