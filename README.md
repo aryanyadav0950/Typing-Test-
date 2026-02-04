@@ -2,7 +2,7 @@
 
 A simple Typing Speed Test web app built using **HTML**, **CSS**, and **JavaScript**.  
 This project measures typing speed (WPM), accuracy, elapsed time, and shows errors in real time.  
-       
+        
 ---                  
                           
 ## 🔹 Features   
